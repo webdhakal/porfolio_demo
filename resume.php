@@ -17,7 +17,7 @@
                 <p>Biratnagar International Collage</p>
             </div>
             <div class="description">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam minus adipisci voluptatem ipsum fugit repellendus facilis quia blanditiis temporibus corporis sint quos sequi omnis, aspernatur dolore quaerat excepturi, sunt eligendi natus ea reiciendis praesentium incidunt repudiandae in? Odit, fugit voluptatem.
+                Hi everyone, my name is Nabin Basnet. I'm a student at Biratnagar International College, part of the S21 batch pursuing a BSc Hons in International Business Management from the University of Wolverhampton. I have been actively contributing to the student blog, sharing insights and experiences related to student life and academic pursuits.
             </div>
         </div>
     </section>
@@ -44,8 +44,8 @@
             <div class="heading">
                 <h2>2018 - 2020</h2>
                 <p>High School</p>
-                <p>Mithila Institute of Technology</p>
-                <p>Janakpur, Nepal</p>
+                <p>Kantipur International College</p>
+                <p>Biratnagar, Nepal</p>
             </div>
             <div class="description">
                 I completed my high school education with a focus on science and mathematics, laying the groundwork for my academic journey. It was a formative period that fostered my passion for learning and personal development.</div>
