@@ -1,0 +1,114 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    padding: 1rem 3rem;
+    .brand {
+        display: flex;
+        align-items: center;
+        font-size: 2rem;
+
+        gap: 1rem;
+        a {
+            color: $primaryColor;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        > :nth-child(2) {
+            font-size: 2rem;
+            font-weight: 900;
+        }
+
+        > :nth-child(3) {
+            font-size: 1.4rem;
+            font-family: $oswaldFont;
+            font-weight: 400;
+        }
+    }
+    nav {
+        display: flex;
+        z-index: 9999;
+        &.active {
+            display: flex;
+        }
+
+        @include xs {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            flex-direction: column;
+            padding: 3rem 0;
+            background-color: $blackColor;
+        }
+
+        @include lg {
+            display: flex;
+            padding: 2rem 0;
+            position: relative;
+            flex-direction: row;
+            background-color: initial;
+            gap: 5rem;
+            opacity: 1;
+        }
+
+        a {
+            &.current {
+                @include xs {
+                    background-color: $primaryColor;
+                }
+
+                @include lg {
+                    background-color: $secondaryColor;
+                }
+            }
+
+            @include xs {
+                justify-self: flex-end;
+                padding: 4rem 15rem;
+                font-family: $josefinFont;
+                color: $whiteColor !important;
+                font-weight: bold;
+                text-align: center;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+            @include md {
+                padding: 4rem 20rem;
+            }
+
+            &:hover::after,
+            &.active {
+                content: '';
+                position: absolute;
+                border-bottom: 0.4rem solid $primaryColor !important;
+                width: 60%;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -1rem;
+            }
+
+            @include lg {
+                padding: 1.5rem;
+                color: $primaryColor !important;
+                font-weight: bold;
+                text-decoration: none;
+                text-transform: uppercase;
+                position: relative;
+            }
+        }
+    }
+
+    .mobnav {
+        i {
+            font-size: 5rem;
+        }
+        @include lg {
+            display: none;
+        }
+    }
+}

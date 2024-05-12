@@ -1,0 +1,457 @@
+@import './responsive/breakpoints';
+@import '_scrollbar';
+@import '_variables';
+@import '_global';
+@import '_header';
+@import '_footer';
+
+.banner {
+    position: relative;
+    @include xs {
+        display: block;
+    }
+
+    @include lg {
+        display: grid;
+        grid-template-columns: 1fr 1.4fr;
+    }
+
+    @include xxl {
+        grid-template-columns: 1fr 1.2fr;
+    }
+}
+
+.profile-card-wrapper {
+    background-color: $secondaryColor;
+    position: relative;
+    @include xs {
+        display: grid;
+        place-items: center;
+        gap: 5rem;
+        padding: 4rem 0;
+    }
+    @include lg {
+        height: 100vh;
+    }
+}
+
+.profile-card {
+    @include xs {
+        position: relative;
+    }
+    @include lg {
+        height: 50%;
+        position: absolute;
+        top: 50%;
+        right: -20%;
+        transform: translateY(-50%);
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+            rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+            rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+}
+
+.profile-description {
+    @include xs {
+        display: grid;
+        gap: 2rem;
+        place-items: center;
+        padding: 0 4rem;
+    }
+
+    @include lg {
+        height: 45%;
+        position: absolute;
+        align-self: center;
+        place-items: start;
+        width: 40rem;
+        text-align: justify;
+        top: 50%;
+        left: 120%;
+        right: 0;
+        transform: translateY(-50%);
+        margin-left: 4rem;
+
+        display: grid;
+        height: max-content;
+        gap: 2rem;
+    }
+
+    @include xxl {
+        width: 50rem;
+    }
+
+    .description {
+        @include xs {
+            text-align: justify;
+        }
+        @include lg {
+            line-height: 2rem;
+        }
+    }
+
+    .home-button {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .home-resume-button,
+    .home-blog-button {
+        @include xs {
+            border: 2px solid $primaryColor;
+            color: $secondaryColor;
+            background-color: $whiteColor;
+        }
+
+        @include lg {
+            background-color: $secondaryColor !important;
+            color: $blackColor;
+        }
+        border: none;
+        width: 10rem;
+    }
+
+    .title {
+        font-size: 8rem;
+        font-weight: bold;
+        color: $primaryColor;
+        font-family: $josefinFont;
+    }
+
+    .sub-title {
+        font-weight: bold;
+        font-size: 1.8rem;
+        font-family: $oswaldFont;
+    }
+}
+
+.card {
+    @include xs {
+        width: 40rem;
+    }
+
+    @include xl {
+        width: 50rem;
+    }
+
+    height: 100%;
+    background-color: $secondaryColor;
+    display: grid;
+    gap: 2rem;
+    text-align: center;
+    align-content: space-between;
+    position: relative;
+}
+
+.card-head {
+    padding: 3rem;
+    display: grid;
+    gap: 2rem;
+    place-content: center;
+    .title {
+        font-weight: bold;
+        font-size: 2rem;
+        position: relative;
+        padding-bottom: 2rem;
+        font-family: $josefinFont;
+        &::after {
+            content: '';
+            position: absolute;
+            border-bottom: 0.4rem solid $primaryColor;
+            width: 40%;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+        }
+    }
+    .group {
+        font-size: 1.4rem;
+        font-family: $oswaldFont;
+        text-transform: uppercase;
+    }
+}
+
+.card-footer.socials {
+    cursor: pointer;
+    padding: 2rem;
+    background-color: $whiteColor;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    font-size: 2rem;
+    a {
+        i {
+            color: initial;
+            font-size: 2.5rem;
+        }
+    }
+}
+
+.avatar-wrapper {
+    width: $avatarDimension;
+    height: $avatarDimension;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+// contact page
+.form-message {
+    color: green;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: $oswaldFont;
+}
+
+.main-content.contact {
+    background-color: $secondaryColor;
+    display: grid;
+    place-items: center;
+}
+
+.contact-form {
+    display: grid;
+    align-items: center;
+    padding: 10rem 0;
+    gap: 4rem;
+
+    @include xs {
+        width: 80%;
+    }
+
+    @include md {
+        width: 60%;
+    }
+
+    @include lg {
+        width: 90rem;
+    }
+
+    .page-title {
+        justify-self: center;
+    }
+    .form {
+        background-color: $whiteColor;
+        width: 100%;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+        display: grid;
+        gap: 4rem;
+
+        @include xs {
+            padding: 8rem 5rem;
+        }
+
+        @include lg {
+            padding: 10rem;
+        }
+
+        &-wrap {
+            display: flex;
+            justify-content: space-between;
+            gap: 5rem;
+
+            @include xs {
+                flex-direction: column;
+            }
+
+            @include lg {
+                flex-direction: row;
+            }
+            > .form-control {
+                width: 100%;
+            }
+        }
+
+        &-control {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            input,
+            textarea {
+                outline: none;
+                border: none;
+                border-bottom: 0.3rem solid $blackColor;
+                &:focus,
+                &:hover {
+                    border-color: $primaryColor;
+                }
+            }
+
+            input {
+                padding: 1rem 0.5rem;
+            }
+
+            textarea {
+                resize: none;
+            }
+
+            label {
+                font-weight: bold;
+                font-size: 1.6rem;
+            }
+        }
+
+        button {
+            cursor: pointer;
+            background-color: $primaryColor;
+            padding: 1rem 2rem;
+            color: $whiteColor;
+            font-size: 1.6rem;
+            font-weight: bold;
+            outline: none;
+
+            &:hover {
+                background-color: $whiteColor;
+                color: $primaryColor;
+                outline: 2px solid $primaryColor;
+            }
+        }
+    }
+}
+
+// resume page
+@import 'resume';
+
+// certificate page
+.main-content.certificate {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto, minmax(20rem, 25rem));
+    justify-items: center;
+    gap: 5rem;
+    padding: 10rem;
+
+    .img-wrapper {
+        padding: 5rem 0;
+
+        @include xs {
+            width: $certificateDimension - 10rem;
+            height: $certificateDimension -10rem;
+        }
+
+        @include sm {
+            width: $certificateDimension - 5rem;
+            height: $certificateDimension -5rem;
+        }
+
+        @include lg {
+            width: $certificateDimension;
+            height: $certificateDimension;
+        }
+
+        @include lg {
+            width: $certificateDimension + 20rem;
+            height: $certificateDimension + 20rem;
+        }
+
+        @include xxl {
+            width: $certificateDimension + 40rem;
+            height: $certificateDimension + 40rem;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+// blog page
+.main-content.blog {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    gap: 10rem;
+    background-color: $secondaryColor;
+    @include xs {
+        padding: 5rem;
+    }
+
+    @include lg {
+        padding: 10rem;
+    }
+
+    .content {
+        @include xs {
+            width: 95%;
+        }
+
+        @include md {
+            width: 90%;
+        }
+
+        @include lg {
+            width: 80%;
+        }
+
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+
+        .heading {
+            @include xs {
+                line-height: 5rem;
+                text-align: center;
+            }
+
+            @include lg {
+                text-align: initial;
+                line-height: 3.4rem;
+            }
+
+            font-size: 3rem;
+            font-weight: bold;
+            font-family: $josefinFont;
+        }
+        .description {
+            text-align: justify;
+        }
+
+        .block {
+            display: flex;
+            padding: 0 4rem;
+            flex-direction: column;
+            gap: 2rem;
+            justify-content: center;
+
+            .sub-heading {
+                font-size: 1.8rem;
+                font-weight: bold;
+                text-decoration: underline;
+                font-style: italic;
+                list-style-type: decimal;
+                &::marker {
+                    font-weight: initial;
+                    font-size: 1.6rem;
+                    opacity: 0.6;
+                    &::after {
+                        content: '.0';
+                        position: absolute;
+                        right: 0;
+                    }
+                }
+            }
+            .sub-description {
+                text-align: justify;
+                line-height: 2rem;
+            }
+        }
+
+        .conclusion {
+            margin-top: 1rem;
+            font-size: 1.8rem;
+            text-align: justify;
+            line-height: 2.2rem;
+            font-family: $oswaldFont;
+        }
+    }
+}

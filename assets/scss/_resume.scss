@@ -1,0 +1,122 @@
+// resume page
+.main-content.resume {
+    width: 100%;
+    background-color: $secondaryColor;
+    display: grid;
+    gap: 10rem;
+    padding: 5rem;
+
+    section {
+        display: grid;
+        gap: 4rem;
+        @include lg {
+            place-items: center;
+        }
+
+        .title {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            // @include xs {
+            //     width: 100%;
+            // }
+
+            @include lg {
+                width: 70rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+        .card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: $whiteColor;
+            line-height: 2rem;
+            gap: 5rem;
+            @include xs {
+                padding: 8rem 2rem;
+            }
+
+            @include lg {
+                padding: 8rem 5rem;
+            }
+
+            box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+            text-align: initial;
+
+            @include xs {
+                width: 100%;
+                flex-direction: column;
+                align-items: start;
+            }
+
+            @include lg {
+                width: 70rem;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .heading {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                font-family: $josefinFont;
+                p {
+                    width: 20rem;
+                }
+
+                h2 {
+                    font-size: 2rem;
+                    color: $primaryColor;
+                }
+            }
+
+            &.multiple {
+                @include sm {
+                    flex-direction: row;
+                    justify-content: space-around;
+                    gap: 3rem;
+                }
+
+                @include lg {
+                    flex-direction: column;
+                    gap: 6rem;
+                }
+                align-items: initial;
+
+                .content {
+                    display: grid;
+                    gap: 2rem;
+                    line-height: 2.4rem;
+                    .sub-title {
+                        font-size: 2rem;
+                        font-family: $josefinFont;
+                    }
+                    .list-wrapper {
+                        .list {
+                            display: grid;
+                            width: 100%;
+                            list-style-type: square;
+                            margin-left: 2rem;
+                            @include xs {
+                                grid-template-columns: 1fr;
+                            }
+                            @include lg {
+                                grid-template-columns: repeat(2, 1fr);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .description {
+                text-align: justify;
+            }
+        }
+    }
+}
